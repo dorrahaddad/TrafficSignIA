@@ -1,0 +1,182 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fff4e6, #f8d7b1); /* Creamy background color */
+    color: #333;
+    padding-top: 50px;
+    font-size: 16px;
+    animation: fadeIn 1.5s ease-in-out; /* Page fade-in animation */
+}
+
+/* Custom Colors */
+:root {
+    --custom-red: #ff6f00; /* Custom Red */
+    --custom-orange: #ff6f00; /* Orange */
+    --custom-cream: #ffecd2; /* Cream */
+    --button-bg-color: #ff6f00; /* Button background color */
+    --button-hover-color: #e65100; /* Button hover color */
+}
+
+/* Container for the form and result */
+.container {
+    max-width: 1000px; /* Increased container width */
+}
+
+/* Title and text colors */
+h1, h4 {
+    font-weight: bold;
+    color: var(--custom-red); /* Use custom red for titles */
+}
+
+h1 {
+    font-size: 4rem; /* Larger title */
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Strong shadow effect */
+    animation: slideIn 1s ease-out; /* Title slide-in animation */
+}
+
+h4 {
+    font-size: 2rem; /* Larger subtitle */
+    letter-spacing: 1px;
+    color: var(--custom-red);
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--custom-red);
+}
+
+/* Image and card styling */
+img {
+    border-radius: 15px;
+    max-width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card styles */
+.card {
+    background: linear-gradient(145deg, var(--custom-cream), #f8d7b1); /* Soft gradient background */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 1s ease-out; /* Card fade-in-up animation */
+}
+
+/* Input and button styling */
+input.form-control {
+    border: 2px solid var(--custom-orange);
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--custom-orange);
+    border: 2px solid var(--custom-orange);
+    color: #fff;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Button shadow */
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    border-color: var(--button-hover-color);
+    transform: translateY(-2px); /* Button hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Button for Go Back */
+.btn-light {
+    background-color: #f8d7b1;
+    color: #333;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 12px;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-light:hover {
+    background-color: #e0e6f0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #f8d7b1;
+    color: #333;
+    padding: 20px;
+    font-size: 1.25rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .form-control {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .btn-light {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
