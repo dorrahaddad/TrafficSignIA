@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Sign Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-1">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <!-- Main Title Section -->
+                <div class="text-center mb-5">
+                    <h1 class="display-3 text-custom-red">Traffic Sign Detection</h1>
+                    <p class="lead text-muted mb-4">Upload a traffic sign image and let AI predict the sign!</p>
+                </div>
+
+                <!-- Image Upload Form -->
+                <div class="card shadow-lg p-4 mb-4 rounded" style="background: linear-gradient(145deg, #ffecd2, #f8d7b1);">
+                    <h4 class="mb-4 text-custom-red">Upload Your Traffic Sign Image</h4>
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <input type="file" name="file" class="form-control" required style="border-radius: 12px; border: 2px solid #ff6f00; padding: 10px;">
+                        </div>
+                        <button type="submit" cclass="btn btn-light w-100 mt-3" style="background-color: #f8d7b1; color: #333; border-radius: 12px;">Predict Now</button>
+                    </form>
+                </div>
+
+                <!-- Prediction Result Section -->
+                {% if filename %}
+                <div class="card shadow-lg p-4 mt-4 rounded" style="background: linear-gradient(145deg, #ffecd2, #f8d7b1);">
+                    <h4 class="mb-4 text-custom-red">Prediction Result</h4>
+                    <div class="d-flex align-items-center">
+                        <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image" class="img-fluid mb-3 rounded" style="border-radius: 15px; max-width: 45%; margin-right: 20px;">
+                        <div>
+                            <h5 class="text-custom-red">Prediction: <span style="color: #ff6f00;">{{ predicted_class }}</span></h5>
+                            <p class="text-muted">Confidence: <strong>{{ confidence }}%</strong></p>
+                        </div>
+                    </div>
+                    <a href="/" class="btn btn-light w-100 mt-3" style="background-color: #f8d7b1; color: #333; border-radius: 12px;">Go Back</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3" style="background-color: #f8d7b1; color: #333;">
+        <p>Done with passion by ZAMD 😊</p>
+    </footer>
+</body>
+</html>
